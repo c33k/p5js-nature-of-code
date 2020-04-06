@@ -24,12 +24,20 @@ const exerciseL1 = () => {
             else // 30% chane of going down
                 walker.step(0, stepSize);
             
+            walker.position.x = normalize(walker.position.x, p.width);
+            walker.position.y = normalize(walker.position.y, p.height);
             walker.draw();
         };
         
         function drawBorder() {
             p.noFill();
             p.rect(0,0, p.width, p.height);
+        }
+
+        function normalize(coordinate, limit) {
+            if (coordinate < 0) return 0;
+            if (coordinate > limit) return limit;
+            return coordinate;
         }
         
         class Walker {

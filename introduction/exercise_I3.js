@@ -34,7 +34,6 @@ const exerciseL3 = () => {
             
             walker.position.x = normalize(walker.position.x, p.width);
             walker.position.y = normalize(walker.position.y, p.height);
-
             walker.draw();
         }
         
